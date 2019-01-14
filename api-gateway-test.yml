@@ -1,17 +1,16 @@
 server:
   port: 9000
 spring:
-  application:
-    name: api-gateway
-#eureka:
-#  client:
-#    service-url: http://localhost:8761/eureka/
-#注册中心
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-
+  rabbitmq:
+    host: 192.168.65.144
+    port: 5672
+    username: guest
+    password: guest
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 zuul:
   #内外网隔离使用
   routes:
