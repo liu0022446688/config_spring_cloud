@@ -1,16 +1,8 @@
 #设置端口
 server:
   port: 8781
-#注册中心
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-
 #定义名称
 spring:
-  application:
-    name: order-service
   zipkin:
     base-url: http://192.168.65.144:9411/
     # cmd docker run -d -p 9411:9411 openzipkin/zipkin
