@@ -1,3 +1,18 @@
 #端口
 server:
   port: 8773
+spring:
+  rabbitmq:
+    host: 192.168.65.144
+    port: 5672
+    username: guest
+    password: guest
+
+  zipkin:
+    base-url: http://192.168.65.144:9411/
+    # cmd docker run -d -p 9411:9411 openzipkin/zipkin
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
