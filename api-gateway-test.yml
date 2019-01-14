@@ -1,0 +1,21 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: api-gateway
+#eureka:
+#  client:
+#    service-url: http://localhost:8761/eureka/
+#注册中心
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+zuul:
+  #内外网隔离使用
+  routes:
+    order-service: /apigateway/**
+  ignored-patterns: /*-service/**
+  #置空忽略的头字段："Cookie", "Set-Cookie", "Authorization"
+  sensitive-headers:
