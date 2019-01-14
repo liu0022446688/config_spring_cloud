@@ -1,0 +1,53 @@
+#设置端口
+server:
+  port: 8781
+#注册中心
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+#定义名称
+spring:
+  application:
+    name: order-service
+  zipkin:
+    base-url: http://192.168.65.144:9411/
+    # cmd docker run -d -p 9411:9411 openzipkin/zipkin
+  sleuth:
+    sampler:
+      #采样百分比
+      probability: 1
+  redis:
+    database: 0
+    host: 192.168.65.137
+    port: 6379
+    timeout: 2000
+#调用超时
+feign:
+  hystrix:
+    enabled: true
+  client:
+    config:
+      product-service:
+        connectTimeout: 5000
+        readTimeout: 3000
+#客户端负载均衡
+product-service:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+#hystrix超时时间禁用 熔断，降级超时
+#hystrix:
+#  command:
+ #   default:
+  #    execution:
+ #       timeout:
+  #        enabled: false
+#hystrix超时时间 熔断，降级超时
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 40000
