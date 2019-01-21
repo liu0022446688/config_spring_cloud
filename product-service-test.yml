@@ -1,6 +1,6 @@
 #端口
 server:
-  port: 8773
+  port: 8771
 spring:
   rabbitmq:
     host: 192.168.65.1
