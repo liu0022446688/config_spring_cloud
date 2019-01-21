@@ -9,7 +9,7 @@ spring:
     password: guest
 
   zipkin:
-    base-url: http://192.168.65.144:9411/
+    base-url: http://192.168.65.1:9411/
     # cmd docker run -d -p 9411:9411 openzipkin/zipkin
 management:
   endpoints:
