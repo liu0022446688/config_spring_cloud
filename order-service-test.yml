@@ -4,7 +4,7 @@ server:
 #定义名称
 spring:
   rabbitmq:
-    host: 192.168.65.144
+    host: 192.168.65.1
     port: 5672
     username: guest
     password: guest
@@ -14,7 +14,7 @@ management:
       exposure:
         include: "*"
   zipkin:
-    base-url: http://192.168.65.144:9411/
+    base-url: http://192.168.65.1:9411/
     # cmd docker run -d -p 9411:9411 openzipkin/zipkin
   sleuth:
     sampler:
@@ -22,7 +22,7 @@ management:
       probability: 1
   redis:
     database: 0
-    host: 192.168.65.144
+    host: 192.168.65.1
     port: 6379
     timeout: 2000
 #调用超时
