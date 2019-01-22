@@ -22,7 +22,7 @@ management:
       probability: 1
   redis:
     database: 0
-    host: 192.168.65.137
+    host: 192.168.65.144
     port: 6379
     timeout: 2000
 #调用超时
